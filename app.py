@@ -1,3 +1,4 @@
+from flask_app import app
 from flask import Flask, request, jsonify
 import numpy as np
 import pickle
@@ -26,4 +27,4 @@ def predict():
 
 #this commands the script to run in the given port
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(debug=False)
