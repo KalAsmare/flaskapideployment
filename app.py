@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 import numpy as np
-import scikit-learn 
 import pickle
 
 pickled_model = pickle.load(open('model.pickle', 'rb'))
