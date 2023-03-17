@@ -4,7 +4,10 @@ import pickle
 
 pickled_model = pickle.load(open('model.pickle', 'rb'))
 app = Flask(__name__)
-
+@app.route('/')
+def index():
+    return "Hello world"
+def predict():
 @app.route('/predict', methods=['POST'])
 def predict():
 
