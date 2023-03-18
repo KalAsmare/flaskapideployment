@@ -2,16 +2,15 @@ from flask import Flask, request, jsonify
 import numpy as np
 import pickle
 
-pickled_model = pickle.load(open('model.pickle', 'rb'))
+#pickled_model = pickle.load(open('model.pickle', 'rb'))
 app = Flask(__name__)
 @app.route('/')
 def index():
-    return "Hello world"
-def predict():
+    return "Good Job"
 @app.route('/predict', methods=['POST'])
 def predict():
 
-    age= request.form.get('age')
+    age = request.form.get('age')
     marital_status = request.form.get('marital_status')
     educational_status = request.form.get('educational_status')
     number_of_birth = request.form.get('number_of_birth')
@@ -26,4 +25,5 @@ def predict():
 
 #this commands the script to run in the given port
 if __name__ == '__main__':
+    pickled_model = pickle.load(open('model.pickle', 'rb'))
     app.run(debug=False)
